@@ -1,0 +1,45 @@
+﻿@model CoreGenericRepo.Models.Entity.MovieCategoryModel
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<a href="/Movie/Ekle" class="btn btn-info">Film Ekle</a>
+<table class="table table-active">
+
+	<thead>
+		<tr class="table table-hover">
+			<th>
+				@Html.DisplayNameFor(model => model.movie.MovieID)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.movie.MovieName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.movie.Description)
+			</th>
+			
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.movielist)
+		{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => item.MovieID)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.MovieID)
+			</td>
+			<td>
+				@Html.DisplayFor(modelItem => item.Description)
+			</td>
+			<td>
+			<td> <a href="/Movie/Detay/@item.MovieID" class="btn btn-success">Detay</a></td>
+			<td> <a href="/Movie/Guncel/@item.MovieID" class="btn btn-primary">Güncelle</a></td>
+			<td> <a href="/Movie/Sil/@item.MovieID" class="btn btn-danger">Sil</a></td>
+		</tr>
+		}
+	</tbody>
+</table>

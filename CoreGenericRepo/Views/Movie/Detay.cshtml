@@ -1,0 +1,40 @@
+﻿@model CoreGenericRepo.Models.Entity.MovieCategoryModel
+@{
+	ViewData["Title"] = "Detay";
+}
+
+
+
+<div>
+	<h4>MovieCategory</h4>
+	<hr />
+	<dl class="row">
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.movie.MovieName)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.movie.MovieName)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.movie.movieCategory.MovieCategoryName)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.movie.movieCategory.MovieCategoryName)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.movie.Image)
+			<img src="~/img/@Model.movie.Image" alt="Image" class="img-fluid tm-gallery-img" />
+		</dt>
+
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.movie.Description)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.movie.Description)
+		</dd>
+	</dl>
+</div>
+<div>
+	@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+	<a asp-action="Index">Back to List</a>
+</div>
